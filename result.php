@@ -11,6 +11,10 @@ echo '<body style="background: #ffffff url(img/background.webp) repeat;height: a
 echo '<div class="container-sm">';
 ?>
 <link rel="stylesheet" href="css/result.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 
 <?php
 AutorizeProtect();
@@ -65,6 +69,107 @@ $stmt->close();
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         z-index: 2000;
     }
+
+    .edit-form {
+        background: #fff;
+        margin-top: 5px;
+    }
+
+    .edit-form input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+
+    .edit-form .btn-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .edit-form button {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .edit-form .btn-save {
+        background: #28a745;
+        color: white;
+    }
+
+    .edit-form button:hover {
+        opacity: 0.9;
+    }
+
+    .upload-form {
+        background: #fff;
+        margin-top: 5px;
+    }
+
+    .upload-form .input-group {
+        display: flex;
+        gap: 10px;
+    }
+
+    .upload-form input[type="file"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .upload-form button {
+        padding: 8px 15px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .upload-form button:hover {
+        opacity: 0.9;
+    }
+
+    .edit-icon {
+        cursor: pointer;
+        color: #6c757d;
+        transition: color 0.3s ease;
+    }
+
+    .edit-icon:hover {
+        color: #007bff;
+    }
+
+    .date-block {
+        background: #ffffffab;
+        display: block;
+        border-radius: 1rem 0rem 0rem 1rem;
+        width: fit-content;
+        padding: 0.25rem 0.5rem;
+        text-align: left;
+        float: right;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .date-block:hover {
+        background: #ffffff;
+    }
+
+    .spinner-border {
+        display: none;
+        width: 1rem;
+        height: 1rem;
+        border-width: 0.15em;
+        margin-right: 0.5rem;
+    }
 </style>
 
 <div data-barba="wrapper">
@@ -100,30 +205,46 @@ $stmt->close();
                                                 }
                                             }
                                         </script>
-                                        <?php ava($encodedStr, $mon); ?>
+                                        <?php result_ava($encodedStr, $mon); ?>
                                         <head>
                                             <title><?= htmlspecialchars($mon['adress'] ?? '', ENT_QUOTES, 'UTF-8') ?></title>
                                         </head>
                                         <link rel="stylesheet" href="css/fix.css">
                                         <div class="section text-center py-md-0">
-                                            <span style="display: block;font-size: large;color: #000;box-sizing: revert-layer;background:#2d885750;padding: 0.25rem;font-family:auto;">
-                                                <div style="margin-bottom: -0.5rem;">
-                                                    <rut id="mon_adress"><?= htmlspecialchars($mon['adress'] ?? '', ENT_QUOTES, 'UTF-8') ?></rut>
-                                                    <a id="image"><i class="bi bi-info-circle"></i></a>
+                                            <div class="content-container" style="background: #2d885750; padding: 0.25rem; font-family: auto; width: 100%;">
+                                                <div class="address-block" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 0.5rem; width: 100%;">
+                                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                                        <rut id="mon_adress" style="font-size: large; color: #000;"><?= htmlspecialchars($mon['adress'] ?? '', ENT_QUOTES, 'UTF-8') ?></rut>
+                                                        <a id="image" class="edit-icon"><i class="fas fa-edit"></i></a>
+                                                    </div>
                                                 </div>
-                                                <img src="img/vin.png" style="width: 50%;"><br>
-                                                <rut id="mon_adress_text"><?= htmlspecialchars($mon['text'] ?? '', ENT_QUOTES, 'UTF-8') ?></rut>
-                                                <img src="img/edit.png" id="image_text" alt="Картинка" width="16px">
-                                            </span>
-                                            <form id="update_form" style="display:none;">
-                                                <label for="new_adress">Новый адрес:</label>
-                                                <input type="text" id="new_adress" name="new_adress" value="<?= htmlspecialchars($mon['adress'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-                                                <input type="submit" value="Сохранить">
+                                                <div class="vin-image" style="text-align: center; margin-bottom: 0.5rem;">
+                                                    <img src="img/vin.png" style="width: 50%;">
+                                                </div>
+                                                <div class="description-block" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;">
+                                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                                        <rut id="mon_adress_text" style="font-size: large; color: #000;"><?= htmlspecialchars($mon['text'] ?? '', ENT_QUOTES, 'UTF-8') ?></rut>
+                                                        <a id="image_text" class="edit-icon"><i class="fas fa-edit"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <form id="update_form" class="edit-form" style="display:none;">
+                                                <div class="form-group">
+                                                    <label for="new_adress">Новый адрес:</label>
+                                                    <input type="text" id="new_adress" name="new_adress" value="<?= htmlspecialchars($mon['adress'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                                                </div>
+                                                <div class="btn-group">
+                                                    <button type="submit" class="btn-save"><i class="fas fa-save"></i> Сохранить</button>
+                                                </div>
                                             </form>
-                                            <form id="update_form_text" style="display:none;">
-                                                <label for="new_adress_text">Новое описание:</label>
-                                                <input type="text" id="new_adress_text" name="new_adress_text" value="<?= htmlspecialchars($mon['text'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-                                                <input type="submit" value="Сохранить">
+                                            <form id="update_form_text" class="edit-form" style="display:none;">
+                                                <div class="form-group">
+                                                    <label for="new_adress_text">Новое описание:</label>
+                                                    <input type="text" id="new_adress_text" name="new_adress_text" value="<?= htmlspecialchars($mon['text'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                                                </div>
+                                                <div class="btn-group">
+                                                    <button type="submit" class="btn-save"><i class="fas fa-save"></i> Сохранить</button>
+                                                </div>
                                             </form>
                                             <script>
                                                 var image = document.getElementById("image");
@@ -470,9 +591,89 @@ $stmt->close();
 <div class="spinner" id="loading-spinner"></div>
 <div class="notification" id="success-notification">Данные успешно обновлены!</div>
 
+<div class="modal fade" id="dateModal" tabindex="-1" aria-labelledby="dateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="dateModalLabel">Изменение даты монтажа</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="montageCalendar"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-primary" id="saveDate">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 <script src="js/bootstrap-select.js"></script>
 <script>
+    // Функция для генерации календаря
+    function generateCalendar(year, month, selectedDate) {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const startingDay = firstDay.getDay() || 7; // Преобразуем воскресенье (0) в 7
+        const totalDays = lastDay.getDate();
+        
+        const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
+                           'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+        
+        let calendar = `
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <button class="btn btn-sm btn-outline-primary" onclick="changeMonth(${year}, ${month - 1})">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <h5 class="mb-0">${monthNames[month]} ${year}</h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="changeMonth(${year}, ${month + 1})">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>`;
+        
+        calendar += '<table class="table table-bordered"><thead><tr>';
+        
+        // Заголовки дней недели
+        const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+        weekDays.forEach(day => calendar += `<th>${day}</th>`);
+        calendar += '</tr></thead><tbody>';
+        
+        // Пустые ячейки до первого дня месяца
+        for (let i = 1; i < startingDay; i++) {
+            calendar += '<td></td>';
+        }
+        
+        // Дни месяца
+        for (let day = 1; day <= totalDays; day++) {
+            const currentDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const isSelected = currentDate === selectedDate ? 'bg-warning text-dark' : '';
+            calendar += `<td class="${isSelected}" data-date="${currentDate}">${day}</td>`;
+            
+            if ((day + startingDay - 1) % 7 === 0) {
+                calendar += '</tr><tr>';
+            }
+        }
+        
+        calendar += '</tbody></table>';
+        return calendar;
+    }
+
+    // Функция для смены месяца
+    function changeMonth(year, month) {
+        if (month < 0) {
+            year--;
+            month = 11;
+        } else if (month > 11) {
+            year++;
+            month = 0;
+        }
+        const selectedDate = $('#montageCalendar td.bg-warning').data('date') || '';
+        const calendar = generateCalendar(year, month, selectedDate);
+        $('#montageCalendar').html(calendar);
+    }
+
     $(document).ready(function() {
         // Инициализация Bootstrap Select
         $('.selectpicker').selectpicker();
@@ -799,6 +1000,156 @@ $stmt->close();
         }
 
         bindDeleteHandlers();
+
+        // Обработчик для блока с датой
+        $(document).on('click', '.date-block', function(e) {
+            e.stopPropagation();
+            const currentDate = $(this).data('date');
+            const date = new Date(currentDate);
+            const calendar = generateCalendar(date.getFullYear(), date.getMonth(), currentDate);
+            $('#montageCalendar').html(calendar);
+            $('#dateModal').modal('show');
+        });
+
+        // Обработчик клика по ячейке календаря
+        $(document).on('click', '#montageCalendar td[data-date]', function() {
+            $('#montageCalendar td').removeClass('bg-warning text-dark');
+            $(this).addClass('bg-warning text-dark');
+        });
+
+        // Обработчик сохранения даты
+        $('#saveDate').click(function() {
+            const selectedDate = $('#montageCalendar td.bg-warning').data('date');
+            if (!selectedDate) {
+                showNotification('Пожалуйста, выберите дату', 'error');
+                return;
+            }
+
+            $.ajax({
+                url: 'update_date.php',
+                type: 'POST',
+                data: {
+                    id: <?= $id ?>,
+                    date: selectedDate
+                },
+                success: function(response) {
+                    if (response.success) {
+                        showNotification('Дата успешно обновлена', 'success');
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        showNotification(response.message || 'Ошибка при обновлении даты', 'error');
+                    }
+                },
+                error: function() {
+                    showNotification('Ошибка при обновлении даты', 'error');
+                }
+            });
+        });
+
+        // Функция для показа уведомлений
+        function showNotification(message, type = 'success') {
+            const notification = $('<div>')
+                .addClass('notification')
+                .css('background-color', type === 'success' ? '#28a745' : '#dc3545')
+                .text(message);
+            
+            $('body').append(notification);
+            notification.fadeIn();
+            
+            setTimeout(() => {
+                notification.fadeOut(() => {
+                    notification.remove();
+                });
+            }, 3000);
+        }
+
+        // Обработчик клика по кнопке удаления фото
+        $(document).on('click', '#delete-photo', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (confirm('Вы уверены, что хотите удалить это изображение?')) {
+                $.ajax({
+                    url: 'delete_photo.php',
+                    type: 'POST',
+                    data: {
+                        id: '<?= $encodedStr ?>'
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            showNotification('Изображение успешно удалено', 'success');
+                            setTimeout(function() {
+                                location.reload();
+                            }, 1000);
+                        } else {
+                            showNotification(response.message || 'Ошибка при удалении', 'error');
+                        }
+                    },
+                    error: function() {
+                        showNotification('Ошибка при удалении файла', 'error');
+                    }
+                });
+            }
+        });
+
+        // Обработчик клика по блоку загрузки изображения
+        $(document).on('click', '.upload-trigger', function(e) {
+            if (!$(e.target).closest('.date-block').length) {
+                $('.upload-form').slideToggle();
+            }
+        });
+
+        // Обработчик клика по изображению
+        $(document).on('click', '#ava img', function(e) {
+            e.preventDefault();
+            $('.upload-form').slideToggle();
+        });
+
+        // Обработчик загрузки изображения
+        $('#upload-btn').click(function() {
+            var fileInput = $('#inputGroupFile02');
+            var file = fileInput[0].files[0];
+            
+            if (!file) {
+                showNotification('Пожалуйста, выберите файл', 'error');
+                return;
+            }
+
+            var formData = new FormData();
+            formData.append('userfile', file);
+            formData.append('id', '<?= $encodedStr ?>');
+
+            $.ajax({
+                url: 'download_img.php',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    $('.progress').show();
+                    $('.progress-bar').css('width', '0%');
+                },
+                success: function(response) {
+                    if (response.success) {
+                        showNotification('Изображение успешно загружено', 'success');
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        showNotification(response.message || 'Ошибка при загрузке', 'error');
+                    }
+                },
+                error: function() {
+                    showNotification('Ошибка при загрузке файла', 'error');
+                },
+                complete: function() {
+                    $('.progress').hide();
+                    fileInput.val('');
+                }
+            });
+        });
     });
 
     // Анимации GSAP при загрузке страницы
@@ -902,37 +1253,43 @@ $stmt->close();
 
 <br>
 <?php
-function ava($encodedStr, $mon)
+function result_ava($encodedStr, $mon)
 {
     $filename = "img/screen/$encodedStr.png";
     $tim = file_exists($filename) ? filemtime($filename) : time();
     $ava = file_exists($filename) ? "img/screen/$encodedStr.png?r=$tim" : "";
     echo '<div id="ava">';
-    echo '<span style="background: #e9ab4f85; display:block;"><img src="/img/add_img.png" width="24px"> Прикрепить изображение';
+    echo '<span class="upload-trigger" style="background: #e9ab4f85; display:block; cursor: pointer;"><i class="fas fa-camera"></i> Прикрепить изображение';
     ?>
-    										<span style="background: #ffffffab;display: block;border-radius: 1rem 0rem 0rem 1rem;width: fit-content;padding: 0 0.25rem;text-align: left;float: right;">
-										<?= date('Y-m-d', strtotime($mon['date'])) ?>
-									</span>
-    <?php
-
+    <span class="date-block" data-date="<?= date('Y-m-d', strtotime($mon['date'])) ?>">
+        <i class="far fa-calendar-alt"></i> <?= date('Y-m-d', strtotime($mon['date'])) ?>
+    </span>
+    <?
     if (!empty($ava)) {
         echo '<div class="d-grid gap-2">';
-        echo '<a id = "div1" href="result.php?vid_id=' . $encodedStr . '&delfoto" class="btn btn-danger btn-sm">Удалить фото</a>';
+        echo '<button type="button" id="delete-photo" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Удалить фото</button>';
         echo '</div>';
 
-
-
-        echo '<a id = "div2" download href="' . $ava . '">';
-        echo '<img style="width: 100%; height: 300px;" data-toggle="tooltip" data-placement="top" title="Для смены нажмите на изображение" class="img-fluid mx-auto d-block" loading="lazy" src="' . $ava . '" alt="">';
+        echo '<a id="download-photo" download href="' . $ava . '">';
+        echo '<img style="width: 100%; height: 300px; border-radius: 8px;" data-toggle="tooltip" data-placement="top" title="Для смены нажмите на изображение" class="img-fluid mx-auto d-block" loading="lazy" src="' . $ava . '" alt="">';
         echo '</a>';
-        if (isset($_GET['delfoto'])) {
-            unlink($filename);
-            echo '<script>document.getElementById("div1").style.display = "none";document.getElementById("div2").style.display = "none";</script>';
-        }
     }
 
     echo '</span>';
     echo '</div>';
+    ?>
+    <div class="upload-form" style="display: none">
+        <div class="input-group">
+            <input type="file" name="userfile" class="form-control" id="inputGroupFile02" accept="image/*">
+            <button type="button" id="upload-btn" class="btn btn-primary">
+                <i class="fas fa-upload"></i> Загрузить
+            </button>
+        </div>
+        <div class="progress mt-2" style="display: none">
+            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+        </div>
+    </div>
+    <?
 }
 
 include 'inc/foot.php';

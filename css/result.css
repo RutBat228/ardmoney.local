@@ -42,4 +42,67 @@ body {
 
 .auth-container a:hover {
     color: #000;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.date-block {
+    transition: all 0.3s ease;
+}
+
+.date-block:hover {
+    background: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#dateModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#dateModal .modal-header {
+    background: #f8f9fa;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#dateModal .modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+#montageDate {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#montageDate:focus {
+    border-color: #54a0ff;
+    box-shadow: 0 0 0 0.2rem rgba(84, 160, 255, 0.25);
 } 

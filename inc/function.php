@@ -935,27 +935,6 @@ function modal_delete() {
     </script>';
 }
 
-
-    <div class="d-flex justify-content-center">
-        <div id="spiner" class="spinner-border" role="status" style="display:none;"></div>
-    </div>
-    <div class="press" style="display: none">
-        <form name="upload" action="download_img.php" method="POST" ENCTYPE="multipart/form-data">
-            <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
-                <input type="hidden" name="id" value="<?= $encodedStr ?>">
-                <input type="hidden" name="adress" value="<?= $mon['adress'] ?>">
-                <input type="file" name="userfile" class="form-control" id="inputGroupFile02">
-                <input type="submit" name="upload" class="input-group-text" value="Загрузить" onclick="(document.getElementById('spiner').style.display='block')">
-            </div>
-        </form>
-    </div>
-    <script>
-        $('#ava').click(function() {
-            $('.press').show(); // Показывает содержимое диалога.
-        });
-    </script>
-<?
-}
 function gm()
 {
     global $usr;
@@ -1470,5 +1449,26 @@ function out_in($val1, $val2, $val3) {
         <?= ($val1 == "adress") ? 'style="display: -webkit-inline-box;width: 91%;">' : '>' ?>
         <?php
     }
+}
+
+function show_upload_form($encodedStr, $mon) {
+    echo '<div class="d-flex justify-content-center">
+        <div id="spiner" class="spinner-border" role="status" style="display:none;"></div>
+    </div>
+    <div class="press" style="display: none">
+        <form name="upload" action="download_img.php" method="POST" ENCTYPE="multipart/form-data">
+            <div class="input-group mb-3" style="margin-bottom: 0rem!important;">
+                <input type="hidden" name="id" value="' . $encodedStr . '">
+                <input type="hidden" name="adress" value="' . $mon['adress'] . '">
+                <input type="file" name="userfile" class="form-control" id="inputGroupFile02">
+                <input type="submit" name="upload" class="input-group-text" value="Загрузить" onclick="(document.getElementById(\'spiner\').style.display=\'block\')">
+            </div>
+        </form>
+    </div>
+    <script>
+        $("#ava").click(function() {
+            $(".press").show();
+        });
+    </script>';
 }
 

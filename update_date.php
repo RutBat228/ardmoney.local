@@ -2,19 +2,34 @@
 session_start();
 include("inc/function.php");
 
+// Устанавливаем часовой пояс
+date_default_timezone_set('Europe/Moscow');
+
 // Устанавливаем заголовок для JSON
 header('Content-Type: application/json; charset=utf-8');
 
 AutorizeProtect();
 access();
 
-if (!isset($_POST['id']) || !isset($_POST['text'])) {
+if (!isset($_POST['id']) || !isset($_POST['date'])) {
     echo json_encode(['success' => false, 'message' => 'Отсутствуют необходимые параметры']);
     exit;
 }
 
 $id = intval($_POST['id']);
-$text = trim($_POST['text']);
+$date = $_POST['date'];
+
+// Проверяем формат даты
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
+    echo json_encode(['success' => false, 'message' => 'Неверный формат даты']);
+    exit;
+}
+
+// Убираем проверку на даты в прошлом
+// if (strtotime($date) < strtotime(date('Y-m-d'))) {
+//     echo json_encode(['success' => false, 'message' => 'Нельзя установить дату в прошлом']);
+//     exit;
+// }
 
 global $connect;
 
@@ -37,16 +52,15 @@ if ($montaj['region'] !== $usr['region']) {
     exit;
 }
 
-// Обновляем описание
-$stmt = $connect->prepare("UPDATE `montaj` SET `text` = ? WHERE `id` = ?");
-$stmt->bind_param("si", $text, $id);
+// Обновляем дату
+$stmt = $connect->prepare("UPDATE `montaj` SET `date` = ? WHERE `id` = ?");
+$stmt->bind_param("si", $date, $id);
 
 if ($stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Описание успешно обновлено']);
+    echo json_encode(['success' => true, 'date' => $date]);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Ошибка при обновлении описания']);
+    echo json_encode(['success' => false, 'message' => 'Ошибка при обновлении даты']);
 }
 
 $stmt->close();
-$connect->close();
-?>
+$connect->close(); 
