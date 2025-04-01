@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Styled Bottom Navbar</title>
+  <style>
+    /* Импорты шрифтов и иконок */
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+    /* Общие стили */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f8fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--accent-color);
+      color: var(--accent-color-fg);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #424e37; /* Фон навбара */
+      box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1000; /* Чтобы навбар был поверх других элементов */
+    }
+
+    /* Стили для навбара */
+    :root {
+      --accent-color: #424e37;
+      --accent-color-fg: #fefefe;
+      --backdrop-color: #424e37;
+      --app-content-background-color: #424e37;
+      --inset-shadow: rgba(7, 43, 74, 0.3);
+      --outset-shadow: rgba(223, 240, 255, 0.25);
+      --clay-box-shadow: rgba(7, 43, 74, 0.3);
+      --clay-background-color: #424e37;
+      --clay-fg-color: #fefefe;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .tabbar {
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .tabbar ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background: #424e37; /* Фон навбара */
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    .tabbar li {
+      display: flex;
+      flex-direction: column; /* Для вертикального расположения иконки и текста */
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      height: 50px;
+      cursor: pointer;
+      color: #888;
+      transition: all 0.3s ease; /* Плавные переходы */
+      position: relative; /* Важно для анимации top */
+      border-top-left-radius: 100%;
+      border-top-right-radius: 100%;
+      background: #424e37; /* Фон для каждой вкладки */
+    }
+
+    .tabbar li span.icon {
+      font-size: 1.5rem;
+      color: #888;
+      transition: transform 0.3s ease, color 0.3s ease; /* Плавные переходы для иконки */
+      position: relative; /* Чтобы иконка была поверх пузыря */
+      z-index: 1; /* Выше пузыря */
+    }
+
+    .tabbar li span.label {
+      font-size: 0.7rem; /* Размер текста */
+      color: transparent; /* Текст скрыт по умолчанию */
+      transition: color 0.3s ease; /* Плавное появление текста */
+      margin-top: 4px; /* Отступ между иконкой и текстом */
+      position: relative; /* Чтобы текст был поверх пузыря */
+      z-index: 1; /* Выше пузыря */
+    }
+
+    .tabbar li.active {
+      top: -10px; /* Поднятие активной вкладки */
+      height: 60px;
+    }
+
+    .tabbar li.active span.icon {
+      color: #ffffff; /* Белый цвет иконки при активном состоянии */
+      transform: scale(1.2); /* Увеличиваем иконку при активации */
+    }
+
+    .tabbar li.active span.label {
+      color: #ffffff; /* Белый цвет текста при активном состоянии */
+    }
+
+    .tabbar li.active::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background-color: #424e37; /* Цвет пузыря */
+      border-radius: 50%;
+      box-shadow: 0 -4px 1px rgb(255 255 255 / 50%); /* Новый box-shadow */
+      z-index: -1; /* Пузырь на заднем плане */
+      animation: bubble-up 0.3s ease-in-out;
+    }
+
+    /* Анимация появления пузыря */
+    @keyframes bubble-up {
+      0% {
+        transform: translateX(-50%) scale(0);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    .tabbar li:hover span.icon {
+      color: #ffffff; /* Белый цвет при наведении */
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <h1>My Website</h1>
+  </header>
+
+  <!-- Основной контент -->
+  <main>
+    <p>Welcome to my website! This is the main content area.</p>
+    <p>Scroll down to see the navigation bar at the bottom.</p>
+  </main>
+
+  <!-- Нижний навбар -->
+  <footer>
+    <div class="tabbar">
+      <ul class="flex-center">
+        <li class="home active">
+          <span class="material-icons-outlined icon">home</span>
+          <span class="label">Главная</span>
+        </li>
+        <li class="search">
+          <span class="material-icons-outlined icon">search</span>
+          <span class="label">Поиск</span>
+        </li>
+        <li class="add">
+          <span class="material-icons-outlined icon">add</span>
+          <span class="label">Добавить</span>
+        </li>
+        <li class="profile">
+          <span class="material-icons-outlined icon">person</span>
+          <span class="label">Профиль</span>
+        </li>
+        <li class="letter-n">
+          <span class="material-icons-outlined icon">N</span>
+          <span class="label">Навигард</span>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript для навбара -->
+  <script>
+    const tabs = document.querySelectorAll(".tabbar li");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Удаляем класс active у всех вкладок
+        tabs.forEach((t) => t.classList.remove("active"));
+
+        // Добавляем класс active к текущей вкладке
+        tab.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>

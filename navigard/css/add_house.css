@@ -1,0 +1,262 @@
+body {
+    position: relative;
+    background: url(../img/all_bg.png) no-repeat center top;
+    background-size: cover;
+    background-color: #0d1921;
+    z-index: 1;
+}
+
+main {
+    color: #f3f3f3;
+    border-radius: 5%;
+    border: 1px solid #445a77;
+    background: #1d263bde;
+    box-shadow: 3px 4px 5px 9px #10101099;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.step-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 5px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    min-width: 0;
+}
+
+.step-circle {
+    width: 20px;
+    height: 20px;
+    background: #415a77;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 5px;
+    transition: background 0.3s;
+}
+
+.step.active .step-circle {
+    background: #1b9aaa;
+}
+
+.step.completed .step-circle {
+    background: #778da9;
+}
+
+.step span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card {
+    background: #1b263b;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    background: #415a77;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.input-group .required {
+    color: #e63946;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #415a77;
+    border: none;
+    border-radius: 8px;
+    color: #e0e1dd;
+    font-size: 14px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #a0b3c9;
+    opacity: 1;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    background: #527294;
+    box-shadow: 0 0 5px rgba(27, 154, 170, 0.5);
+    outline: none;
+}
+
+.input-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.input-group select[multiple] {
+    height: 120px;
+}
+
+.card-footer {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #1b263b;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.next {
+    background: #1b9aaa;
+    color: #fff;
+}
+
+.btn.next:hover {
+    background: #178795;
+}
+
+.btn.back {
+    background: #778da9;
+    color: #fff;
+}
+
+.btn.back:hover {
+    background: #657b99;
+}
+
+.btn.submit {
+    background: #e63946;
+    color: #fff;
+}
+
+.btn.submit:hover {
+    background: #d32f3b;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.notification.error {
+    background: #e63946;
+    color: #fff;
+}
+
+.notification.success {
+    background: #1b9aaa;
+    color: #fff;
+}
+
+.success-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: #2ecc71;
+    margin-bottom: 20px;
+}
+
+.success-container h2 {
+    color: #e0e1dd;
+    margin-bottom: 10px;
+}
+
+.success-container p {
+    color: #a4b0be;
+    margin-bottom: 25px;
+}
+
+.success-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: baseline;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #e0e1dd;
+    color: #e0e1dd;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(224, 225, 221, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline i {
+    margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+    .step span {
+        font-size: 12px;
+    }
+    .step-circle {
+        width: 16px;
+        height: 16px;
+    }
+    .card-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+} 

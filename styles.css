@@ -1,0 +1,19 @@
+.navbar-nav {
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.td_user {
+    background: rgb(222,252,186);
+    background: linear-gradient(180deg, 
+        rgba(222,252,186,0.82) 5%, 
+        rgba(224,255,203,0.64) 16%, 
+        rgba(229,252,217,0.8) 74%
+    );
+} 

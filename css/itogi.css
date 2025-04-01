@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(133deg, #122f18ed, #323331c2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.auth-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 90px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.auth-container img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.auth-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.auth-container .btn-primary {
+    background-color: #FFA726;
+    border: none;
+    padding: 0.6rem 1.2rem;
+}
+
+.auth-container .btn-secondary {
+    background-color: #EF5350;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.2rem;
+}
+
+.auth-container a {
+    display: block;
+    margin-top: 1rem;
+    color: #616161;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    color: #000;
+}
+
+.pizdec {
+    margin: auto;
+    width: 95%;
+    text-align: justify;
+    padding: 0px 0px 0.1rem 1rem;
+}
+
+.montaj_input {
+    padding: 1rem 0 0 0;
+}
+
+.montaj_textarea {
+    width: 100%;
+}
+
+/* Стиль для блока с суммой */
+.year-amount {
+    margin: 2rem;
+    text-align: center;
+    color: #ff0000;
+    font-weight: bold;
+}

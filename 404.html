@@ -1,0 +1,301 @@
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/pravki.css?1679159784">
+  <style>
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+        <style>
+          @media (max-width: 768px) {
+            .pidaras {
+              width: 100%;
+              height: auto;
+            }
+          }
+  
+  
+          .wrapper {
+    /*This part is important for centering*/
+    display: grid;
+    place-items: center;
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+    color: #FFFFFF;
+	text-shadow: 
+		-0   -1px 2px #000000,
+		 0   -1px 2px #000000,
+		-0    1px 2px #000000,
+		 0    1px 2px #000000,
+		-1px -0   2px #000000,
+		 1px -0   2px #000000,
+		-1px  0   2px #000000,
+		 1px  0   2px #000000,
+		-1px -1px 2px #000000,
+		 1px -1px 2px #000000,
+		-1px  1px 2px #000000,
+		 1px  1px 2px #000000,
+		-1px -1px 2px #000000,
+		 1px -1px 2px #000000,
+		-1px  1px 2px #000000,
+		 1px  1px 2px #000000;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .bg-dark {
+    background: #00000000 !important;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  :root {
+    --delay: 0;
+    --duration: 800ms;
+    --iterations: 1;
+  }
+  /* •·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•· */
+  
+  
+  .reveal-text,
+  .reveal-text::after {
+    -webkit-animation-delay: var(--animation-delay, 2s);
+            animation-delay: var(--animation-delay, 2s);
+    -webkit-animation-iteration-count: var(--iterations, 1);
+            animation-iteration-count: var(--iterations, 1);
+    -webkit-animation-duration: var(--duration, 800ms);
+            animation-duration: var(--duration, 800ms);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  
+  .reveal-text {
+    --animation-delay: var(--delay, 0);
+    --animation-duration: var(--duration, 800ms);
+    --animation-iterations: var(--iterations, 1);
+    position: relative;
+    font-size: 6vw;
+    -webkit-animation-name: clip-text;
+            animation-name: clip-text;
+    color: #123321;
+    white-space: nowrap;
+    cursor: default
+    
+  }
+  
+  .reveal-text::after {
+      content: "";
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #f2f98b;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      -webkit-animation-name: text-revealer;
+              animation-name: text-revealer;
+    }
+  
+  
+  @-webkit-keyframes clip-text {
+    from {
+      -webkit-clip-path: inset(0 100% 0 0);
+              clip-path: inset(0 100% 0 0);
+    }
+    to {
+      -webkit-clip-path: inset(0 0 0 0);
+              clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  
+  @keyframes clip-text {
+    from {
+      -webkit-clip-path: inset(0 100% 0 0);
+              clip-path: inset(0 100% 0 0);
+    }
+    to {
+      -webkit-clip-path: inset(0 0 0 0);
+              clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  
+  @-webkit-keyframes text-revealer {
+    
+    0%, 50% {
+      transform-origin: 0 50%;
+    }
+    
+    60%, 100% {
+      transform-origin: 100% 50%;		
+    }
+  
+    
+    60% {
+      transform: scaleX(1);
+    }
+    
+    100% {
+      transform: scaleX(0);
+    }
+  }
+  
+  
+  @keyframes text-revealer {
+    
+    0%, 50% {
+      transform-origin: 0 50%;
+    }
+    
+    60%, 100% {
+      transform-origin: 100% 50%;		
+    }
+  
+    
+    60% {
+      transform: scaleX(1);
+    }
+    
+    100% {
+      transform: scaleX(0);
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+        </style>
+</head>
+<body style="background: #ffffff url(img/bg.png) repeat">
+  <audio id="audio" autoplay loop muted>
+    <source src="/cat.mp3" type="audio/mp3">
+    Ваш браузер не поддерживает элемент audio.
+  </audio>
+
+  <div class="container-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0 !important;padding-bottom: 0;position: absolute;width: 100%;">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <div class="wrapper">
+            <div class="typing-demo">
+              Получилась хуйня((</div>
+        </div>
+
+        </a>
+      </div>
+    </nav>
+    <a href="/">
+    <video id="catVideo" width="100%" height="auto" autoplay loop muted>
+      <source src="cat.mp4" type="video/mp4">
+      Ваш браузер не поддерживает элемент video.
+    </video>
+  </a>
+    <main role="main">
+      <div style="padding: 0; text-align: center;position: absolute;background: #85898c;">
+        <h1>Либо инета нет либо сервер умер🤔</h1>
+        <h1>Нажми на 🐱 для ребута</h1>
+      </div>
+    </main>
+  </div>
+
+  <button id="toggleSound" class="floating-button">
+    🔊 
+  </button>
+
+  <script>
+    var video = document.getElementById('catVideo');
+
+    // Автоматически воспроизводим звук без звука при загрузке страницы
+    window.addEventListener('DOMContentLoaded', (event) => {
+      video.play(); // Воспроизводим видео
+    });
+
+    document.getElementById('toggleSound').addEventListener('click', function() {
+      video.muted = false; // Включаем звук видео
+      video.play(); // Воспроизводим видео
+    });
+  </script>
+
+</body>
+</html>

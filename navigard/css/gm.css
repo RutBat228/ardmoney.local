@@ -1,0 +1,161 @@
+:root {
+    --bs-primary: #434e38;
+    --bs-primary-rgb: 67, 78, 56;
+}
+.btn-primary {
+    background-color: #434e38;
+    border-color: #434e38;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #353e2d !important;
+    border-color: #353e2d !important;
+}
+.text-primary {
+    color: #434e38 !important;
+}
+.bg-primary {
+    background-color: #434e38 !important;
+}
+.btn-outline-primary {
+    color: #434e38;
+    border-color: #434e38;
+}
+.btn-outline-primary:hover {
+    background-color: #434e38;
+    border-color: #434e38;
+}
+
+/* Улучшенные стили для карточек и элементов */
+.rounded-4 {
+    border-radius: 0.75rem !important;
+}
+
+.card {
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.icon-circle {
+    transition: all 0.3s ease;
+}
+
+.card:hover .icon-circle {
+    transform: scale(1.1);
+}
+
+.progress-bar {
+    transition: width 1s ease;
+}
+
+.table th {
+    font-weight: 600;
+    color: #434e38;
+}
+
+/* Улучшенные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    .card-body {
+        padding: 0.75rem !important;
+    }
+    
+    .display-4 {
+        font-size: 1.5rem !important;
+    }
+    
+    .h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .table-responsive {
+        max-height: 500px;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+    }
+    
+    .table th, .table td {
+        white-space: nowrap;
+        padding: 0.5rem !important;
+        font-size: 0.875rem;
+    }
+    
+    .icon-circle {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .stats-row .card-title {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .progress {
+        height: 20px !important;
+    }
+    
+    .btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .stats-row .fa-2x {
+        font-size: 1em !important;
+    }
+}
+
+/* Стили для печати */
+@media print {
+    .container-fluid {
+        padding: 0 !important;
+    }
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+    .btn, .alert, .mobile-nav {
+        display: none !important;
+    }
+}
+
+/* Компактная таблица */
+.table-sm th, .table-sm td {
+    padding: 0.5rem 0.25rem !important;
+    font-size: 0.9rem;
+}
+
+.table-responsive {
+    min-width: auto !important;
+    width: 100%;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 576px) {
+    .table-sm th, .table-sm td {
+        padding: 0.4rem 0.2rem !important;
+        font-size: 0.8rem;
+    }
+    
+    /* Сокращаем заголовки на мобильных */
+    .table th:nth-child(2)::after { content: "Всего"; }
+    .table th:nth-child(2) span { display: none; }
+    
+    .table th:nth-child(3)::after { content: "Нов."; }
+    .table th:nth-child(3) span { display: none; }
+    
+    .table th:nth-child(4)::after { content: "Гот."; }
+    .table th:nth-child(4) span { display: none; }
+    
+    .table th:nth-child(5)::after { content: "%"; }
+    .table th:nth-child(5) span { display: none; }
+} 

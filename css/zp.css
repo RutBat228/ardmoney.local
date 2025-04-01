@@ -1,0 +1,274 @@
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease;
+    background: #ffffff;
+    border-radius: 0.5rem;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    background: #ffffff;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #198754, #157347);
+    color: white;
+    border-bottom: none;
+    padding: 1.25rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+}
+
+.salary-form {
+    padding: 1.5rem;
+    background: #ffffff;
+}
+
+.form-floating {
+    margin-bottom: 1.25rem;
+}
+
+.form-control, 
+.form-select {
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    color: #212529;
+}
+
+.form-select option:checked,
+.form-select option:hover,
+.form-select option:focus {
+    background: linear-gradient(135deg, #19875422, #15734722);
+    color: #198754;
+}
+
+.form-select option:hover {
+    background: linear-gradient(135deg, #19875411, #15734711);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.15);
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-color: #ced4da;
+}
+
+.form-text {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.table {
+    margin-bottom: 0;
+    color: #212529;
+}
+
+.table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #198754;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 1rem 0.75rem;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+    color: #616161;
+    padding: 0.75rem;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #198754, #157347);
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #157347, #115c39);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-success:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.alert {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(25, 135, 84, 0.03);
+    transition: background-color 0.2s ease;
+}
+
+.fas {
+    margin-right: 0.5rem;
+}
+
+.form-floating label {
+    color: #757575;
+    font-weight: 500;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: #198754;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.history-table th {
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.history-table td {
+    white-space: nowrap;
+}
+
+.total-amount {
+    font-weight: 600;
+    color: #2196F3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .card {
+        background: #2d2d2d;
+    }
+    
+    .table {
+        color: #dee2e6;
+    }
+    
+    .table th {
+        background: #343a40;
+        color: #fff;
+        border-color: #495057;
+    }
+    
+    .table-hover tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+    }
+    
+    .card {
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    .card-header {
+        border-radius: 0 !important;
+    }
+    
+    .salary-form {
+        padding: 0.75rem;
+    }
+    
+    .form-control,
+    .form-select {
+        font-size: 1rem;
+        height: 3.5rem;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .table-responsive {
+        margin: 0;
+        border: none;
+    }
+}
+
+/* Стили для формы зарплаты */
+.salary-form .form-floating {
+    position: relative;
+}
+
+.salary-form .form-control,
+.salary-form .form-select {
+    height: 3.5rem;
+    line-height: 1.25;
+    font-size: 1rem;
+}
+
+.salary-form .form-floating label {
+    padding: 1rem 0.75rem;
+}
+
+.salary-form .form-control:focus,
+.salary-form .form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
+
+/* Стили для навигации */
+.navbar {
+    padding: 0;
+    background: #00000050;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 1rem;
+}
+
+.navbar img {
+    transition: transform 0.2s ease;
+}
+
+.navbar img:hover {
+    transform: scale(1.1);
+} 

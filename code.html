@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelenka</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header nav {
+            margin-bottom: 10px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #777;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        header hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 10px auto;
+            width: 100px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        header p {
+            font-size: 16px;
+            color: #777;
+            margin-top: 0;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .hero-images img {
+            width: 24%;
+            display: block;
+        }
+
+        #gallery {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #gallery h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .gallery-item p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .gallery-item p:first-of-type {
+            font-weight: bold;
+        }
+
+        #about-us {
+            margin-bottom: 40px;
+        }
+
+        #about-us h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #blog {
+            margin-bottom: 40px;
+        }
+
+        #blog h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .blog-item {
+            border: 1px solid #eee;
+        }
+
+        .blog-item img {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .blog-item h3 {
+            font-size: 16px;
+            margin: 10px 15px;
+        }
+
+        .blog-item p {
+            font-size: 14px;
+            margin: 0 15px 15px;
+            color: #777;
+        }
+
+        #contacts {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #contacts h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #contacts p {
+            margin-bottom: 15px;
+        }
+
+        .contact-details div {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 10px;
+            margin: 10px auto;
+            width: 60%;
+            max-width: 300px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 20px;
+            color: #999;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer nav {
+            margin-top: 10px;
+        }
+
+        footer nav a {
+            text-decoration: none;
+            color: #777;
+            margin: 0 15px;
+        }
+
+        .image-placeholder {
+            background-color: #f0f0f0;
+            color: #ccc;
+            text-align: center;
+            line-height: 100px; /* Примерно по высоте */
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="#">Galary</a>
+                <a href="#">About us</a>
+                <a href="#">Blog</a>
+                <a href="#">Contacts</a>
+            </nav>
+            <hr>
+            <h1>Zelenka</h1>
+            <p>home flower shop</p>
+        </header>
+
+        <section class="hero-images">
+            <img src="https://images.unsplash.com/photo-1519085855814-c7355d078fdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FjdHVzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Cactus" onerror="this.src='https://via.placeholder.com/280x300/f0f0f0/ccc?text=Image+Not+Available'">
+            <img src="https://images.unsplash.com/photo-1585647338867-0b66c298a1d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWxvZSUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Aloe" onerror="this.src='https://via.placeholder.com/280x300/f0f0f0/ccc?text=Image+Not+Available'">
+            <img src="https://images.unsplash.com/photo-1494514954644-47151a792b44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhY3R1c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Cactus" onerror="this.src='https://via.placeholder.com/280x300/f0f0f0/ccc?text=Image+Not+Available'">
+            <img src="https://images.unsplash.com/photo-1504296475786-eba2a5f4349a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGNhY3R1c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Cactus" onerror="this.src='https://via.placeholder.com/280x300/f0f0f0/ccc?text=Image+Not+Available'">
+        </section>
+
+        <section id="gallery">
+            <h2>Galery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1620165851405-4f429f42cb9b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c3VjY3VsZW50JTIwcGxhbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Ecotool"</p>
+                    <p>15.98 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1591731844852-21680087b584?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3VjY3VsZW50JTIwcGxhbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Dissali"</p>
+                    <p>14.35 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585338410777-29977a41c444?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Oslo"</p>
+                    <p>13.80 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1621944868148-16b4c903d892?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Moony"</p>
+                    <p>16.90 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585338409818-9a15b96281ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Avona"</p>
+                    <p>15.78 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585338410578-14d847233a93?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Koledo"</p>
+                    <p>12.60 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517479115345-8f7201458bca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Zeplib"</p>
+                    <p>17.20 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585338410781-ddca8e135594?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Veroli"</p>
+                    <p>13.92 $</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585338410488-c70c4cb898d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHN1Y2N1bGVudCUyMHBsYW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Plant" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/ccc?text=Image+Not+Available'">
+                    <p>"Circal"</p>
+                    <p>13.80 $</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us">
+            <h2>About us</h2>
+            <p>Zelenka is a great choice for a cozy home. Every day our plants, degeneracy with love, will give you a sense of aesthetic pleasure, comfort and pleasure. We do our best to ensure that our client is always satisfied. We are always glad and glad to give birth to you.</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-item">
+                    <img src="https://images.unsplash.com/photo-1589791497385-bb94094bb748?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVhJTIwdG93ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Blog Post Image" onerror="this.src='https://via.placeholder.com/350x200/f0f0f0/ccc?text=Image+Not+Available'">
+                    <h3>30 Days of Gift Ideas: A Harvest-Themed Tea Towel</h3>
+                    <p>Your most veg-obsessed friend will drool over this kitchen towel printed with a pretty motif of hand-illustrated artichokes.</p>
+                </div>
+                <div class="blog-item">
+                    <img src="https://images.unsplash.com/photo-1603476341814-c3e89ab8e6d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGhyaWZ0JTIwc3RvcmUlMjBzdG9vbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Blog Post Image" onerror="this.src='https://via.placeholder.com/350x200/f0f0f0/ccc?text=Image+Not+Available'">
+                    <h3>How to Revive a Thrift-Store Stool</h3>
+                    <p>Upgrade your entryway and salvage a worn wooden stool all in one go, with this simple upcycling DIY.</p>
+                </div>
+                <div class="blog-item">
+                    <img src="https://images.unsplash.com/photo-1551794082-c7c788813a41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2VyYW1pYyUyMHNob3B8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="Blog Post Image" onerror="this.src='https://via.placeholder.com/350x200/f0f0f0/ccc?text=Image+Not+Available'">
+                    <h3>5 Inspiring Ceramics Shops to Discover Today</h3>
+                    <p>Planters, tea sets, wall decor, and more: Explore all the breathtaking ways makers are putting their own stamp on this versatile material.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacts">
+            <h2>Contacts</h2>
+            <p>Address:</p>
+            <p>Big Possibilities Street, 32A</p>
+            <div class="contact-details">
+                <div>Phone number:</div>
+            </div>
+            <div class="contact-details">
+                <div>E-mail:</div>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/VK.com-logo.svg/800px-VK.com-logo.svg.png" alt="VK" style="width: 20px; height: 20px;" onerror="this.src='https://via.placeholder.com/20x20/f0f0f0/ccc?text=VK'">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="F" style="width: 20px; height: 20px;" onerror="this.src='https://via.placeholder.com/20x20/f0f0f0/ccc?text=F'">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/512px-Logo_of_Twitter.svg.png" alt="T" style="width: 20px; height: 20px;" onerror="this.src='https://via.placeholder.com/20x20/f0f0f0/ccc?text=T'">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" alt="G+" style="width: 20px; height: 20px;" onerror="this.src='https://via.placeholder.com/20x20/f0f0f0/ccc?text=G+'">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="O" style="width: 20px; height: 20px;" onerror="this.src='https://via.placeholder.com/20x20/f0f0f0/ccc?text=O'">
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2023</p>
+        <nav>
+            <a href="#">Galary</a>
+            <a href="#">About us</a>
+            <a href="#">Blog</a>
+            <a href="#">Contacts</a>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+    "links": [
+        {
+            "title": "Ardmoney 🏆",
+            "description": "Армяне",
+            "url": "https://ardmoney.ru",
+            "category": "Ссылки"
+        }
+    ],
+    "apps": [
+        {
+            "title": "YouTube Vanced 🎬",
+            "description": "Модифицированная версия YouTube с функциями премиум-подписки, включая блокировку рекламы, фоновое воспроизведение и темный режим.",
+            "url": "https://ardmoney.ru/youtubevanced.apk",
+            "category": "YouTube"
+        },
+        {
+            "title": "YouTube X 📹",
+            "description": "Неофициальная версия YouTube с дополнительными функциями и улучшениями.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/YouTube%20X.apk",
+            "category": "YouTube"
+        },
+        {
+            "title": "VK Video 🎞️",
+            "description": "Приложение для просмотра видеоконтента из социальной сети ВКонтакте.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/VK_Video.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "XNXX (STABLE) 🍑",
+            "description": "Ну ты жулик конечно, прога для теребоньканья на ТВ",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/xnxx-STABLE-1.21-@TvBox_App(1).apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Кинопоиск 🎥",
+            "description": "Приложение для поиска и просмотра фильмов, сериалов и шоу с возможностью получения информации о контенте.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/_CA_E8_ED_EE_CF_EE_E8_F1_EA__28RS_29_v.7.13.0_281031880_29_287.0-14.0_29_28arm7a_2Carm64-8a_2Cx86_2Cx86-64_29.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Lampa 🍿",
+            "description": "Приложение для потокового просмотра фильмов и сериалов, аналогичное Lampa.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/app-lite-release.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Lampishe 🍿",
+            "description": "Приложение для потокового просмотра фильмов и сериалов, аналогичное Lampa.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/lampishe_1.21.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "IVI (Android TV) 📽️",
+            "description": "Популярный сервис для просмотра фильмов и сериалов через интернет на устройствах Android TV.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/ivi_(AndroidTV)(RS)_v.24.12.1tv(13240)(8.0-15.0)(arm7a,arm64-8a,x86,x86-64).apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Zona++ 🎞️",
+            "description": "Сервис для просмотра фильмов и сериалов, аналогичный торрент-стримингу.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/Zona++2.1.49.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Tivimate 📺",
+            "description": "Приложение для потокового вещания IPTV, поддерживающее просмотр каналов и управление плейлистами.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/tivimate-5.1.6.apk",
+            "category": "ТВ"
+        },
+        {
+            "title": "Panda Vision 📡",
+            "description": "Каталог для просмотра телеканалов от разных провайдеров связи.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/Panda%20Vision.apk",
+            "category": "ТВ"
+        },
+        {
+            "title": "Plus TV 📺",
+            "description": "Приложение для доступа к телевещанию и мультимедийным сервисам.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/PlusTv.apk",
+            "category": "ТВ"
+        },
+        {
+            "title": "Prisma 🎬",
+            "description": "Каталог фильмов для просмотра, предоставляющий доступ к различным фильмам и сериалам для комфортного просмотра на Android устройствах.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/Prisma_v0.3.1.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "SeasonHit 🏆",
+            "description": "Приложение для поиска и просмотра сериалов и фильмов, с поддержкой различных платформ.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/SeasonHit-2.4.3.4.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Rutube TV 📺",
+            "description": "Приложение для просмотра контента с российской видеоплатформы Rutube.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/RutubeTv.release.29.11.1.TV-general.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Out-of-Season 🍂",
+            "description": "Приложение для просмотра фильмов и сериалов, поддерживающее разные платформы и контент.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/Out-of-Season-0.9.10.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "KION 🎬",
+            "description": "Сервис для потокового вещания фильмов и сериалов, доступный на устройствах Android TV.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/KION_(AndroidTV)_v.1.1.156.93.11(2024110111)(7.0-14.0)(arm7a,arm64-8a,x86,x86-64).apk",
+            "category": "Кино"
+        },
+        {
+            "title": "TorrServe Matrix 🔄",
+            "description": "Приложение для стриминга контента через торрент, позволяющее смотреть видео прямо в приложении.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/torrserve_matrix.134.client-release.apk",
+            "category": "Системные"
+        },
+        {
+            "title": "Prisma 🎬",
+            "description": "Каталог фильмов для просмотра, предоставляющий доступ к различным фильмам и сериалам для комфортного просмотра на Android устройствах.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/Prisma_v0.3.1.apk",
+            "category": "Кино"
+        },
+        {
+            "title": "Player Vimu Media Player 🎶",
+            "description": "Медиа-плеер для воспроизведения видео и аудио контента.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/PlayerVimu_MediaPlayer.apk",
+            "category": "Плееры"
+        },
+        {
+            "title": "Player Nova Video Player 🎥",
+            "description": "Мультимедийный плеер для воспроизведения видеофайлов.",
+            "url": "https://github.com/RutBat228/kovalev_apps/raw/refs/heads/main/PlayerNovaVideoPlaye.apk",
+            "category": "Плееры"
+        }
+    ]
+}

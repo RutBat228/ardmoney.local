@@ -1,0 +1,175 @@
+[21-Feb-2025 21:21:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:21:23 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:21:23 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:21:23 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:21:23 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:21:52 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:21:52 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:21:52 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:21:52 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:21:52 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:22:53 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:22:53 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:22:53 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:22:53 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:22:53 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:28:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:28:34 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:28:34 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:28:34 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:28:34 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:28:44 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:28:44 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:28:44 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:28:44 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:28:44 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:29:03 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:29:03 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:29:03 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:29:03 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:29:03 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:30:07 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:30:07 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:30:07 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:30:07 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:30:07 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:30:09 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:30:09 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:30:09 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:30:09 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:30:09 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:38:15 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:38:15 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:38:15 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:38:15 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:38:15 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:38:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:38:18 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:38:18 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:38:18 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:38:18 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:38:21 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:38:21 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:38:21 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:38:21 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:38:21 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:38:39 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:38:39 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:38:39 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:38:39 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:38:39 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:38:46 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:38:46 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:38:46 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:38:46 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:38:46 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:39:55 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:39:55 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:39:55 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:39:55 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:39:55 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:39:57 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:39:57 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:39:57 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:39:57 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:39:57 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:39:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:39:59 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:39:59 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:39:59 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:39:59 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:23 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:23 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:23 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:23 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:24 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:24 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:24 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:24 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:24 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:42 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:42 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:42 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:42 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:42 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:46 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:46 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:46 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:48 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:48 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:48 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:48 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:48 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:40:49 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:40:49 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:40:49 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:40:49 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:40:49 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:41:16 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:41:16 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:41:16 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:41:16 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:41:16 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:41:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:41:23 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:41:23 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:41:23 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:41:23 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:45:15 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:45:15 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:45:15 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:45:15 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:45:15 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:45:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:45:34 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:45:34 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:45:34 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:45:34 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:46:15 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:46:15 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:46:15 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:46:15 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:46:15 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:46:32 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:46:32 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:46:32 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:46:32 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:46:32 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:46:58 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:46:58 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:46:58 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
+[21-Feb-2025 21:46:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /var/www/fastuser/data/www/ardmoney.ru/inc/function.php on line 2
+[22-Feb-2025 00:46:59 Europe/Moscow] PHP Warning:  Constant HOST already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 4
+[22-Feb-2025 00:46:59 Europe/Moscow] PHP Warning:  Constant USER already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 5
+[22-Feb-2025 00:46:59 Europe/Moscow] PHP Warning:  Constant BAZA already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 6
+[22-Feb-2025 00:46:59 Europe/Moscow] PHP Warning:  Constant PASS already defined in /var/www/fastuser/data/www/ardmoney.ru/inc/db.php on line 7
