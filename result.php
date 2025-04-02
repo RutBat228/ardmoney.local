@@ -58,16 +58,26 @@ $stmt->close();
     }
 
     .notification {
-        display: none;
         position: fixed;
         top: 20px;
-        right: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 15px 25px;
-        background-color: #28a745;
+        border-radius: 4px;
         color: white;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 2000;
+        font-weight: 500;
+        z-index: 9999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        min-width: 300px;
+        text-align: center;
+    }
+
+    .notification.success {
+        background-color: #28a745;
+    }
+
+    .notification.error {
+        background-color: #dc3545;
     }
 
     .edit-form {
@@ -698,13 +708,13 @@ $stmt->close();
                 success: function(response) {
                     spinner.hide();
                     updatePageData(<?=$id?>);
-                    showSuccessNotification();
+                    showSuccessNotification('Вид работ успешно добавлен');
                     clearFormFields(); // Очистка полей после успешной отправки
                 },
                 error: function(xhr, status, error) {
                     spinner.hide();
                     console.error('Ошибка AJAX при отправке формы:', error, xhr.responseText);
-                    alert('Ошибка при отправке данных: ' + error);
+                    showSuccessNotification('Ошибка при добавлении вида работ');
                 }
             });
         });
@@ -725,12 +735,12 @@ $stmt->close();
                 success: function(response) {
                     spinner.hide();
                     updatePageData(monId);
-                    showSuccessNotification('Элемент успешно удалён!');
+                    showSuccessNotification('Вид работ успешно удален');
                 },
                 error: function(xhr, status, error) {
                     spinner.hide();
                     console.error('Ошибка AJAX при удалении:', error, xhr.responseText);
-                    alert('Ошибка при удалении: ' + error);
+                    showSuccessNotification('Ошибка при удалении вида работ');
                 }
             });
         });
@@ -902,28 +912,35 @@ $stmt->close();
         function showSuccessNotification(message = 'Данные успешно обновлены!') {
             const notification = $('#success-notification');
             notification.text(message);
+            
+            // Анимация появления
             gsap.fromTo(notification, 
-                { opacity: 0, y: -20 }, 
                 { 
-                    display: 'block', 
+                    opacity: 0, 
+                    y: -50,
+                    duration: 0.3,
+                    ease: "power2.out"
+                },
+                { 
                     opacity: 1, 
-                    y: 0, 
-                    duration: 0.5, 
-                    ease: "power2.out",
-                    onComplete: function() {
-                        gsap.to(notification, {
-                            opacity: 0,
-                            y: -20,
-                            duration: 0.5,
-                            ease: "power2.in",
-                            delay: 2,
-                            onComplete: function() {
-                                notification.hide();
-                            }
-                        });
-                    }
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
                 }
             );
+
+            // Анимация исчезновения
+            setTimeout(() => {
+                gsap.to(notification, {
+                    opacity: 0,
+                    y: -50,
+                    duration: 0.3,
+                    ease: "power2.in",
+                    onComplete: () => {
+                        notification.hide();
+                    }
+                });
+            }, 3000);
         }
 
         // Функция для привязки обработчиков удаления
@@ -943,12 +960,12 @@ $stmt->close();
                     success: function(response) {
                         spinner.hide();
                         updatePageData(monId);
-                        showSuccessNotification('Элемент успешно удалён!');
+                        showSuccessNotification('Вид работ успешно удален');
                     },
                     error: function(xhr, status, error) {
                         spinner.hide();
                         console.error('Ошибка AJAX при удалении:', error, xhr.responseText);
-                        alert('Ошибка при удалении: ' + error);
+                        showSuccessNotification('Ошибка при удалении вида работ');
                     }
                 });
             });
@@ -1021,7 +1038,7 @@ $stmt->close();
         $('#saveDate').click(function() {
             const selectedDate = $('#montageCalendar td.bg-warning').data('date');
             if (!selectedDate) {
-                showNotification('Пожалуйста, выберите дату', 'error');
+                showNotification('Пожалуйста, выберите дату');
                 return;
             }
 
@@ -1034,16 +1051,16 @@ $stmt->close();
                 },
                 success: function(response) {
                     if (response.success) {
-                        showNotification('Дата успешно обновлена', 'success');
+                        showNotification('Дата успешно обновлена');
                         setTimeout(function() {
                             location.reload();
                         }, 1000);
                     } else {
-                        showNotification(response.message || 'Ошибка при обновлении даты', 'error');
+                        showNotification(response.message || 'Ошибка при обновлении даты');
                     }
                 },
                 error: function() {
-                    showNotification('Ошибка при обновлении даты', 'error');
+                    showNotification('Ошибка при обновлении даты');
                 }
             });
         });
@@ -1052,46 +1069,74 @@ $stmt->close();
         function showNotification(message, type = 'success') {
             const notification = $('<div>')
                 .addClass('notification')
-                .css('background-color', type === 'success' ? '#28a745' : '#dc3545')
-                .text(message);
-            
-            $('body').append(notification);
-            notification.fadeIn();
-            
+                .addClass(type)
+                .text(message)
+                .appendTo('body');
+
+            // Удаляем предыдущие уведомления
+            $('.notification').not(notification).remove();
+
+            // Анимация появления
+            gsap.fromTo(notification, 
+                { 
+                    opacity: 0, 
+                    y: -50,
+                    duration: 0.3,
+                    ease: "power2.out"
+                },
+                { 
+                    opacity: 1, 
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                }
+            );
+
+            // Анимация исчезновения
             setTimeout(() => {
-                notification.fadeOut(() => {
-                    notification.remove();
+                gsap.to(notification, {
+                    opacity: 0,
+                    y: -50,
+                    duration: 0.3,
+                    ease: "power2.in",
+                    onComplete: () => {
+                        notification.remove();
+                    }
                 });
             }, 3000);
         }
 
-        // Обработчик клика по кнопке удаления фото
+        // Обработчик удаления фото
         $(document).on('click', '#delete-photo', function(e) {
             e.preventDefault();
             e.stopPropagation();
             
-            if (confirm('Вы уверены, что хотите удалить это изображение?')) {
-                $.ajax({
-                    url: 'delete_photo.php',
-                    type: 'POST',
-                    data: {
-                        id: '<?= $encodedStr ?>'
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            showNotification('Изображение успешно удалено', 'success');
-                            setTimeout(function() {
-                                location.reload();
-                            }, 1000);
-                        } else {
-                            showNotification(response.message || 'Ошибка при удалении', 'error');
-                        }
-                    },
-                    error: function() {
-                        showNotification('Ошибка при удалении файла', 'error');
+            const spinner = $('#loading-spinner');
+            spinner.show();
+            
+            const id = '<?= $encodedStr ?>';
+            const $ava = $(this).closest('#ava');
+            
+            $.ajax({
+                url: 'delete_photo.php',
+                type: 'POST',
+                data: { id: id },
+                success: function(response) {
+                    spinner.hide();
+                    if (response.success) {
+                        $ava.find('img').remove();
+                        $ava.find('#delete-photo').closest('.d-grid').remove();
+                        $ava.find('.upload-trigger').show();
+                        showSuccessNotification('Фото успешно удалено');
+                    } else {
+                        showSuccessNotification(response.message || 'Ошибка при удалении фото');
                     }
-                });
-            }
+                },
+                error: function() {
+                    spinner.hide();
+                    showSuccessNotification('Ошибка при удалении фото');
+                }
+            });
         });
 
         // Обработчик клика по блоку загрузки изображения
@@ -1113,14 +1158,17 @@ $stmt->close();
             var file = fileInput[0].files[0];
             
             if (!file) {
-                showNotification('Пожалуйста, выберите файл', 'error');
+                showSuccessNotification('Пожалуйста, выберите файл');
                 return;
             }
+
+            const spinner = $('#loading-spinner');
+            spinner.show();
 
             var formData = new FormData();
             formData.append('userfile', file);
             formData.append('id', '<?= $encodedStr ?>');
-
+            
             $.ajax({
                 url: 'download_img.php',
                 type: 'POST',
@@ -1132,17 +1180,19 @@ $stmt->close();
                     $('.progress-bar').css('width', '0%');
                 },
                 success: function(response) {
+                    spinner.hide();
                     if (response.success) {
-                        showNotification('Изображение успешно загружено', 'success');
+                        showSuccessNotification('Изображение успешно загружено');
                         setTimeout(function() {
                             location.reload();
                         }, 1000);
                     } else {
-                        showNotification(response.message || 'Ошибка при загрузке', 'error');
+                        showSuccessNotification(response.message || 'Ошибка при загрузке');
                     }
                 },
                 error: function() {
-                    showNotification('Ошибка при загрузке файла', 'error');
+                    spinner.hide();
+                    showSuccessNotification('Ошибка при загрузке файла');
                 },
                 complete: function() {
                     $('.progress').hide();
