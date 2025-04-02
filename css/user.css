@@ -153,6 +153,14 @@
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     min-width: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.salary-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: #f8f9fa;
 }
 
 .salary-total {

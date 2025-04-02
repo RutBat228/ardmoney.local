@@ -161,7 +161,7 @@ function prim_zp($fio, $month_name, $year) {
         uf.advance,
         uf.official_employment,
         u.region,
-        COALESCE(c.monthly_bonus, 10.00) as monthly_bonus,  -- Изменено с 8.00 на 10.00
+        COALESCE(c.monthly_bonus, 10.00) as monthly_bonus,
         COALESCE(
             (SELECT SUM(kajdomu) 
              FROM montaj 
@@ -215,8 +215,8 @@ function prim_zp($fio, $month_name, $year) {
         $cash_sum = $total_sum - $advance;
     }
     
-    // Вывод результатов
-    echo "<div class='salary-block'>";
+    // Вывод результатов с добавлением data-атрибутов для кликабельности
+    echo "<div class='salary-block' data-user-id='{$data['user_id']}' data-month='{$month_num}' data-year='{$year}'>";
     echo "<div class='salary-total'>💰 " . number_format($total_sum, 0, '.', ' ') . " р.</div>";
     
     if ($advance > 0) {

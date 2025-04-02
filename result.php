@@ -11,10 +11,8 @@ echo '<body style="background: #ffffff url(img/background.webp) repeat;height: a
 echo '<div class="container-sm">';
 ?>
 <link rel="stylesheet" href="css/result.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <?php
 AutorizeProtect();
@@ -35,151 +33,10 @@ if ($montaj->num_rows != 0) {
 $stmt->close();
 ?>
 
-<!-- Стили для спиннера и уведомления -->
+<!-- Стили для alert -->
 <style>
-    .spinner {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #28a745;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        z-index: 2000;
-    }
-
-    @keyframes spin {
-        0% { transform: translate(-50%, -50%) rotate(0deg); }
-        100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    .notification {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 15px 25px;
-        border-radius: 4px;
-        color: white;
-        font-weight: 500;
-        z-index: 9999;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        min-width: 300px;
-        text-align: center;
-    }
-
-    .notification.success {
-        background-color: #28a745;
-    }
-
-    .notification.error {
-        background-color: #dc3545;
-    }
-
-    .edit-form {
-        background: #fff;
-        margin-top: 5px;
-    }
-
-    .edit-form input[type="text"] {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        margin-bottom: 10px;
-    }
-
-    .edit-form .btn-group {
-        display: flex;
-        gap: 10px;
-    }
-
-    .edit-form button {
-        width: 100%;
-        padding: 8px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .edit-form .btn-save {
-        background: #28a745;
-        color: white;
-    }
-
-    .edit-form button:hover {
-        opacity: 0.9;
-    }
-
-    .upload-form {
-        background: #fff;
-        margin-top: 5px;
-    }
-
-    .upload-form .input-group {
-        display: flex;
-        gap: 10px;
-    }
-
-    .upload-form input[type="file"] {
-        flex: 1;
-        padding: 8px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    .upload-form button {
-        padding: 8px 15px;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .upload-form button:hover {
-        opacity: 0.9;
-    }
-
-    .edit-icon {
-        cursor: pointer;
-        color: #6c757d;
-        transition: color 0.3s ease;
-    }
-
-    .edit-icon:hover {
-        color: #007bff;
-    }
-
-    .date-block {
-        background: #ffffffab;
-        display: block;
-        border-radius: 1rem 0rem 0rem 1rem;
-        width: fit-content;
-        padding: 0.25rem 0.5rem;
-        text-align: left;
-        float: right;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .date-block:hover {
-        background: #ffffff;
-    }
-
-    .spinner-border {
-        display: none;
-        width: 1rem;
-        height: 1rem;
-        border-width: 0.15em;
-        margin-right: 0.5rem;
-    }
+    .alert { padding: 0.2rem 0; }
+    .alert-dismissible .btn-close { padding: 0.5rem 1rem; }
 </style>
 
 <div data-barba="wrapper">
@@ -280,6 +137,10 @@ $stmt->close();
                                                             success: function(data) {
                                                                 $('#update_form').hide();
                                                                 $('#mon_adress').text(new_adress);
+                                                                showSuccessNotification('Название успешно обновлено');
+                                                            },
+                                                            error: function() {
+                                                                showSuccessNotification('Ошибка при обновлении названия', 'error');
                                                             }
                                                         });
                                                     });
@@ -307,6 +168,10 @@ $stmt->close();
                                                             success: function(data) {
                                                                 $('#update_form_text').hide();
                                                                 $('#mon_adress_text').text(new_text);
+                                                                showSuccessNotification('Описание успешно обновлено');
+                                                            },
+                                                            error: function() {
+                                                                showSuccessNotification('Ошибка при обновлении описания', 'error');
                                                             }
                                                         });
                                                     });
@@ -599,7 +464,6 @@ $stmt->close();
 
 <!-- Элементы спиннера и уведомления -->
 <div class="spinner" id="loading-spinner"></div>
-<div class="notification" id="success-notification">Данные успешно обновлены!</div>
 
 <div class="modal fade" id="dateModal" tabindex="-1" aria-labelledby="dateModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -692,6 +556,49 @@ $stmt->close();
             searchInput.blur();
         });
 
+        // Настройка toastr
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        // Функция для показа уведомлений
+        function showSuccessNotification(message = 'Данные успешно обновлены!', type = 'success') {
+            if (type === 'success') {
+                toastr.success(message);
+            } else {
+                toastr.error(message);
+            }
+        }
+
+        // Проверка URL параметров для уведомлений
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        const message = urlParams.get('message');
+        
+        if (status === 'success' && message) {
+            showSuccessNotification(decodeURIComponent(message), 'success');
+            // Очищаем URL от параметров
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (status === 'error' && message) {
+            showSuccessNotification(decodeURIComponent(message), 'error');
+            // Очищаем URL от параметров
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
         // Обработка отправки формы через AJAX
         $('#montaj-form').submit(function(event) {
             event.preventDefault();
@@ -709,12 +616,11 @@ $stmt->close();
                     spinner.hide();
                     updatePageData(<?=$id?>);
                     showSuccessNotification('Вид работ успешно добавлен');
-                    clearFormFields(); // Очистка полей после успешной отправки
+                    clearFormFields();
                 },
                 error: function(xhr, status, error) {
                     spinner.hide();
-                    console.error('Ошибка AJAX при отправке формы:', error, xhr.responseText);
-                    showSuccessNotification('Ошибка при добавлении вида работ');
+                    showSuccessNotification('Ошибка при добавлении вида работ', 'error');
                 }
             });
         });
@@ -739,7 +645,6 @@ $stmt->close();
                 },
                 error: function(xhr, status, error) {
                     spinner.hide();
-                    console.error('Ошибка AJAX при удалении:', error, xhr.responseText);
                     showSuccessNotification('Ошибка при удалении вида работ');
                 }
             });
@@ -755,7 +660,6 @@ $stmt->close();
             const value = $checkbox.is(':checked') ? 1 : 0;
             const spinner = $('#loading-spinner');
 
-            // Форматирование даты для редиректа
             let formattedDat = '';
             if (monDat) {
                 const parts = monDat.split('-');
@@ -784,194 +688,19 @@ $stmt->close();
                             updatePageData(monId);
                         }
                     } else {
-                        console.error('Ошибка от сервера:', response.message);
-                        alert('Ошибка: ' + response.message);
+                        showSuccessNotification('Ошибка: ' + response.message);
                         $checkbox.prop('checked', !$checkbox.is(':checked'));
                     }
                 },
                 error: function(xhr, status, error) {
                     spinner.hide();
-                    console.error('Ошибка AJAX:', error, xhr.responseText);
-                    alert('Ошибка при обновлении: ' + error);
+                    showSuccessNotification('Ошибка при обновлении');
                     $checkbox.prop('checked', !$checkbox.is(':checked'));
                 }
             });
         });
 
-        // Функция для обновления данных на странице
-        function updatePageData(monId) {
-            $.ajax({
-                url: 'fetch_montaj_data.php',
-                type: 'GET',
-                data: { mon_id: monId },
-                dataType: 'json',
-                success: function(data) {
-                    console.log('Полученные данные:', data);
-
-                    if (data.error) {
-                        console.error('Ошибка в данных:', data.error);
-                        alert('Ошибка: ' + data.error);
-                        return;
-                    }
-
-                    const montajList = $('#montaj-list');
-                    montajList.empty();
-                    data.montaj_items.forEach(item => {
-                        const bgAcent = item.price == 0 ? "background: #c8e4f58c;" : "";
-                        let countText = '';
-                        if (item.name === "Переработка вечер с 18 до 22") {
-                            const ebatCode = data.ebat_code || 0;
-                            if (item.count && ebatCode) {
-                                const hours = item.count / ebatCode;
-                                countText = `(${hours} ${hours == 1 ? 'час' : 'часа'} / ${ebatCode} чел.)`;
-                            } else {
-                                countText = 'Некорректные данные для расчета.';
-                            }
-                        } else if (item.count && item.count != 1) {
-                            countText = item.price == 0 ? `(${item.count} метров)` : `(${item.count} единиц)`;
-                        }
-                        const priceBadge = item.price != 0 ? `<span class="badge bg-primary rounded-pill">${item.price}р.</span>` : '';
-                        const textSpan = item.name === "Другие виды работ" ? `<span class="text-muted fw-light" style="font-size: small;">${item.text || ''}</span>` : '';
-                        montajList.append(`
-                            <li class="list-group-item d-flex justify-content-between align-items-start" style="text-align: left;${bgAcent}">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-normal">
-                                        <a style="color:#000;" href="edit_array_montaj.php?id=${item.id}&mon_id=${monId}&name=${encodeURIComponent(item.name)}&status_baza=${item.status_baza}">
-                                            ${item.name} ${countText}
-                                        </a>
-                                        ${textSpan}
-                                    </div>
-                                </div>
-                                ${priceBadge}
-                                <a href="edit_mon.php?delete=${item.id}&mon_id=${monId}&technik1=${encodeURIComponent(data.technik1 || '')}&technik2=${encodeURIComponent(data.technik2 || '')}&technik3=${encodeURIComponent(data.technik3 || '')}&technik4=${encodeURIComponent(data.technik4 || '')}&technik5=${encodeURIComponent(data.technik5 || '')}&technik6=${encodeURIComponent(data.technik6 || '')}&technik7=${encodeURIComponent(data.technik7 || '')}&technik8=${encodeURIComponent(data.technik8 || '')}" class="delete-item">
-                                    <span class="badge bg-danger rounded-pill">X</span>
-                                </a>
-                            </li>
-                        `);
-                    });
-
-                    const materialsAndSummary = $('#materials-and-summary');
-                    if (!materialsAndSummary.length) {
-                        console.error('Элемент #materials-and-summary не найден в DOM');
-                        return;
-                    }
-                    console.log('Обновляем #materials-and-summary с данными:', data);
-                    materialsAndSummary.empty();
-                    if (data.materials && data.materials.length > 0) {
-                        materialsAndSummary.append(' Материалы: <br>');
-                        data.materials.forEach(material => {
-                            const unit = material.count > 4 ? 'м.' : 'шт.';
-                            materialsAndSummary.append(`
-                                <a style="color: black; text-decoration: underline;" href="edit_mon.php?material_delete=${material.id}&mon_id=${monId}&status=${data.status}&status_baza=${data.status_baza}&technik1=${encodeURIComponent(data.technik1 || '')}&technik2=${encodeURIComponent(data.technik2 || '')}&technik3=${encodeURIComponent(data.technik3 || '')}&technik4=${encodeURIComponent(data.technik4 || '')}&technik5=${encodeURIComponent(data.technik5 || '')}&technik6=${encodeURIComponent(data.technik6 || '')}&technik7=${encodeURIComponent(data.technik7 || '')}&technik8=${encodeURIComponent(data.technik8 || '')}">
-                                    ${material.name} <b style="color:red;">${material.count} ${unit}</b><br>
-                                </a>
-                            `);
-                        });
-                    }
-                    materialsAndSummary.append(`
-                        Сумма:<span style="color: green;font-weight: bold;" id="summa">${data.summa || '0'}₽ </span>
-                        Каждому:<span style="color: green;font-weight: bold;" id="kajdomu">${data.kajdomu || '0'}₽</span><br>
-                        Делали: <span id="techniks">${data.techniks || ''}</span> 
-                        <a id="image_tech"><i class="bi bi-arrow-left-right"></i></a><br><br>
-                    `);
-
-                    const statBazaContainer = $('#stat-baza-container');
-                    const statBazaLabel = $('#stat_baza_label');
-                    if (data.status == 1) {
-                        statBazaContainer.hide();
-                        statBazaLabel.hide();
-                    } else {
-                        statBazaContainer.show();
-                        statBazaLabel.show();
-                        $('#stat_baza').prop('checked', data.status_baza == 1);
-                    }
-
-                    $("#image_tech").off('click').on('click', function() {
-                        $("#dropdown").toggle();
-                    });
-
-                    gsap.from(".list-group-item", {
-                        opacity: 0,
-                        x: -30,
-                        duration: 0.6,
-                        stagger: 0.1,
-                        ease: "power2.out"
-                    });
-                    console.log('Обновление #materials-and-summary завершено');
-
-                    bindDeleteHandlers();
-                },
-                error: function(xhr, status, error) {
-                    console.error('Ошибка при обновлении данных:', error, xhr.responseText);
-                    alert('Ошибка при обновлении данных: ' + error + '\nОтвет сервера: ' + xhr.responseText);
-                }
-            });
-        }
-
-        // Функция для показа уведомления
-        function showSuccessNotification(message = 'Данные успешно обновлены!') {
-            const notification = $('#success-notification');
-            notification.text(message);
-            
-            // Анимация появления
-            gsap.fromTo(notification, 
-                { 
-                    opacity: 0, 
-                    y: -50,
-                    duration: 0.3,
-                    ease: "power2.out"
-                },
-                { 
-                    opacity: 1, 
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                }
-            );
-
-            // Анимация исчезновения
-            setTimeout(() => {
-                gsap.to(notification, {
-                    opacity: 0,
-                    y: -50,
-                    duration: 0.3,
-                    ease: "power2.in",
-                    onComplete: () => {
-                        notification.hide();
-                    }
-                });
-            }, 3000);
-        }
-
-        // Функция для привязки обработчиков удаления
-        function bindDeleteHandlers() {
-            $('.delete-item').off('click').on('click', function(event) {
-                event.preventDefault();
-
-                const spinner = $('#loading-spinner');
-                spinner.show();
-
-                const url = $(this).attr('href');
-                const monId = <?=$id?>;
-
-                $.ajax({
-                    url: url,
-                    type: 'GET',
-                    success: function(response) {
-                        spinner.hide();
-                        updatePageData(monId);
-                        showSuccessNotification('Вид работ успешно удален');
-                    },
-                    error: function(xhr, status, error) {
-                        spinner.hide();
-                        console.error('Ошибка AJAX при удалении:', error, xhr.responseText);
-                        showSuccessNotification('Ошибка при удалении вида работ');
-                    }
-                });
-            });
-        }
-
-        // Функция для очистки полей формы, включая поля поиска в модальных окнах
+        // Функция для очистки полей формы
         function clearFormFields() {
             const fields = [
                 { vid: 'vid_rabot1', count: 'count1', button: 'button_vid_rabot1', search: 'search_vid_rabot1' },
@@ -992,18 +721,10 @@ $stmt->close();
                     button.innerText = field.vid === 'vid_rabot4' ? 'Редко используемые' : 'Часто используемые';
                     button.style.color = '#999';
 
-                    // Очистка поля поиска
                     if (searchInput) {
                         searchInput.value = '';
-                        liveSearch(field.vid); // Сброс фильтрации после очистки
+                        liveSearch(field.vid);
                     }
-
-                    gsap.to(button, { opacity: 0, duration: 0.2, onComplete: function() {
-                        gsap.to(button, { opacity: 1, duration: 0.2 });
-                    }});
-                    gsap.to(countInput, { opacity: 0, duration: 0.2, onComplete: function() {
-                        gsap.to(countInput, { opacity: 1, duration: 0.2 });
-                    }});
                 }
             });
 
@@ -1015,8 +736,6 @@ $stmt->close();
                 materialSelect.selectpicker('refresh');
             }
         }
-
-        bindDeleteHandlers();
 
         // Обработчик для блока с датой
         $(document).on('click', '.date-block', function(e) {
@@ -1038,7 +757,7 @@ $stmt->close();
         $('#saveDate').click(function() {
             const selectedDate = $('#montageCalendar td.bg-warning').data('date');
             if (!selectedDate) {
-                showNotification('Пожалуйста, выберите дату');
+                showSuccessNotification('Пожалуйста, выберите дату');
                 return;
             }
 
@@ -1051,60 +770,32 @@ $stmt->close();
                 },
                 success: function(response) {
                     if (response.success) {
-                        showNotification('Дата успешно обновлена');
+                        showSuccessNotification('Дата успешно обновлена');
                         setTimeout(function() {
                             location.reload();
                         }, 1000);
                     } else {
-                        showNotification(response.message || 'Ошибка при обновлении даты');
+                        showSuccessNotification(response.message || 'Ошибка при обновлении даты');
                     }
                 },
                 error: function() {
-                    showNotification('Ошибка при обновлении даты');
+                    showSuccessNotification('Ошибка при обновлении даты');
                 }
             });
         });
 
-        // Функция для показа уведомлений
-        function showNotification(message, type = 'success') {
-            const notification = $('<div>')
-                .addClass('notification')
-                .addClass(type)
-                .text(message)
-                .appendTo('body');
+        // Обработчик клика по блоку загрузки изображения
+        $(document).on('click', '.upload-trigger', function(e) {
+            if (!$(e.target).closest('.date-block').length) {
+                $('.upload-form').slideToggle();
+            }
+        });
 
-            // Удаляем предыдущие уведомления
-            $('.notification').not(notification).remove();
-
-            // Анимация появления
-            gsap.fromTo(notification, 
-                { 
-                    opacity: 0, 
-                    y: -50,
-                    duration: 0.3,
-                    ease: "power2.out"
-                },
-                { 
-                    opacity: 1, 
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                }
-            );
-
-            // Анимация исчезновения
-            setTimeout(() => {
-                gsap.to(notification, {
-                    opacity: 0,
-                    y: -50,
-                    duration: 0.3,
-                    ease: "power2.in",
-                    onComplete: () => {
-                        notification.remove();
-                    }
-                });
-            }, 3000);
-        }
+        // Обработчик клика по изображению
+        $(document).on('click', '#ava img', function(e) {
+            e.preventDefault();
+            $('.upload-form').slideToggle();
+        });
 
         // Обработчик удаления фото
         $(document).on('click', '#delete-photo', function(e) {
@@ -1137,19 +828,6 @@ $stmt->close();
                     showSuccessNotification('Ошибка при удалении фото');
                 }
             });
-        });
-
-        // Обработчик клика по блоку загрузки изображения
-        $(document).on('click', '.upload-trigger', function(e) {
-            if (!$(e.target).closest('.date-block').length) {
-                $('.upload-form').slideToggle();
-            }
-        });
-
-        // Обработчик клика по изображению
-        $(document).on('click', '#ava img', function(e) {
-            e.preventDefault();
-            $('.upload-form').slideToggle();
         });
 
         // Обработчик загрузки изображения
@@ -1200,104 +878,125 @@ $stmt->close();
                 }
             });
         });
-    });
 
-    // Анимации GSAP при загрузке страницы
-    document.addEventListener('DOMContentLoaded', function() {
-        gsap.from("#mon_adress, #mon_adress_text", {
-            opacity: 0,
-            y: 20,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power2.out"
-        });
+        // Функция для обновления данных на странице
+        function updatePageData(monId) {
+            $.ajax({
+                url: 'fetch_montaj_data.php',
+                type: 'GET',
+                data: { mon_id: monId },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.error) {
+                        showSuccessNotification('Ошибка: ' + data.error);
+                        return;
+                    }
 
-        gsap.from(".list-group-item", {
-            opacity: 0,
-            x: -30,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power2.out",
-            delay: 0.2
-        });
+                    const montajList = $('#montaj-list');
+                    montajList.empty();
+                    data.montaj_items.forEach(item => {
+                        const bgAcent = item.price == 0 ? "background: #c8e4f58c;" : "";
+                        let countText = '';
+                        if (item.name === "Переработка вечер с 18 до 22") {
+                            const ebatCode = data.ebat_code || 0;
+                            if (item.count && ebatCode) {
+                                const hours = item.count / ebatCode;
+                                countText = `(${hours} ${hours == 1 ? 'час' : 'часа'} / ${ebatCode} чел.)`;
+                            } else {
+                                countText = 'Некорректные данные для расчета.';
+                            }
+                        } else if (item.count && item.count != 1) {
+                            countText = item.price == 0 ? `(${item.count} метров)` : `(${item.count} единиц)`;
+                        }
+                        const priceBadge = item.price != 0 ? `<span class="badge bg-primary rounded-pill">${item.price}р.</span>` : '';
+                        const textSpan = item.name === "Другие виды работ" ? `<span class="text-muted fw-light" style="font-size: small;">${item.text || ''}</span>` : '';
+                        montajList.append(`
+                            <li class="list-group-item d-flex justify-content-between align-items-start" style="text-align: left;${bgAcent}">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-normal">
+                                        <a style="color:#000;" href="edit_array_montaj.php?id=${item.id}&mon_id=${monId}&name=${encodeURIComponent(item.name)}&status_baza=${item.status_baza}">
+                                            ${item.name} ${countText}
+                                        </a>
+                                        ${textSpan}
+                                    </div>
+                                </div>
+                                ${priceBadge}
+                                <a href="edit_mon.php?delete=${item.id}&mon_id=${monId}&technik1=${encodeURIComponent(data.technik1 || '')}&technik2=${encodeURIComponent(data.technik2 || '')}&technik3=${encodeURIComponent(data.technik3 || '')}&technik4=${encodeURIComponent(data.technik4 || '')}&technik5=${encodeURIComponent(data.technik5 || '')}&technik6=${encodeURIComponent(data.technik6 || '')}&technik7=${encodeURIComponent(data.technik7 || '')}&technik8=${encodeURIComponent(data.technik8 || '')}" class="delete-item">
+                                    <span class="badge bg-danger rounded-pill">X</span>
+                                </a>
+                            </li>
+                        `);
+                    });
 
-        gsap.from(".badge", {
-            opacity: 0,
-            scale: 0.5,
-            duration: 0.4,
-            stagger: 0.05,
-            ease: "elastic.out(1, 0.3)",
-            delay: 0.4
-        });
+                    const materialsAndSummary = $('#materials-and-summary');
+                    materialsAndSummary.empty();
+                    if (data.materials && data.materials.length > 0) {
+                        materialsAndSummary.append(' Материалы: <br>');
+                        data.materials.forEach(material => {
+                            const unit = material.count > 4 ? 'м.' : 'шт.';
+                            materialsAndSummary.append(`
+                                <a style="color: black; text-decoration: underline;" href="edit_mon.php?material_delete=${material.id}&mon_id=${monId}&status=${data.status}&status_baza=${data.status_baza}&technik1=${encodeURIComponent(data.technik1 || '')}&technik2=${encodeURIComponent(data.technik2 || '')}&technik3=${encodeURIComponent(data.technik3 || '')}&technik4=${encodeURIComponent(data.technik4 || '')}&technik5=${encodeURIComponent(data.technik5 || '')}&technik6=${encodeURIComponent(data.technik6 || '')}&technik7=${encodeURIComponent(data.technik7 || '')}&technik8=${encodeURIComponent(data.technik8 || '')}">
+                                    ${material.name} <b style="color:red;">${material.count} ${unit}</b><br>
+                                </a>
+                            `);
+                        });
+                    }
+                    materialsAndSummary.append(`
+                        Сумма:<span style="color: green;font-weight: bold;" id="summa">${data.summa || '0'}₽ </span>
+                        Каждому:<span style="color: green;font-weight: bold;" id="kajdomu">${data.kajdomu || '0'}₽</span><br>
+                        Делали: <span id="techniks">${data.techniks || ''}</span> 
+                        <a id="image_tech"><i class="bi bi-arrow-left-right"></i></a><br><br>
+                    `);
 
-        gsap.from([".form-check", ".btn-success"], {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.6,
-            ease: "back.out(1.7)",
-            delay: 0.8
-        });
-    });
+                    const statBazaContainer = $('#stat-baza-container');
+                    const statBazaLabel = $('#stat_baza_label');
+                    if (data.status == 1) {
+                        statBazaContainer.hide();
+                        statBazaLabel.hide();
+                    } else {
+                        statBazaContainer.show();
+                        statBazaLabel.show();
+                        $('#stat_baza').prop('checked', data.status_baza == 1);
+                    }
 
-    // Повторная привязка событий после перехода Barba.js
-    barba.hooks.enter(() => {
-        gsap.from("#mon_adress, #mon_adress_text", {
-            opacity: 0,
-            y: 20,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: "power2.out"
-        });
+                    $("#image_tech").off('click').on('click', function() {
+                        $("#dropdown").toggle();
+                    });
 
-        gsap.from(".list-group-item", {
-            opacity: 0,
-            x: -30,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power2.out",
-            delay: 0.2
-        });
+                    bindDeleteHandlers();
+                },
+                error: function(xhr, status, error) {
+                    showSuccessNotification('Ошибка при обновлении данных');
+                }
+            });
+        }
 
-        gsap.from(".badge", {
-            opacity: 0,
-            scale: 0.5,
-            duration: 0.4,
-            stagger: 0.05,
-            ease: "elastic.out(1, 0.3)",
-            delay: 0.4
-        });
+        // Функция для привязки обработчиков удаления
+        function bindDeleteHandlers() {
+            $('.delete-item').off('click').on('click', function(event) {
+                event.preventDefault();
 
-        gsap.from([".form-check", ".btn-success"], {
-            opacity: 0,
-            scale: 0.9,
-            duration: 0.6,
-            ease: "back.out(1.7)",
-            delay: 0.8
-        });
+                const spinner = $('#loading-spinner');
+                spinner.show();
 
-        var image = document.getElementById("image");
-        var block = document.getElementById("update_form");
-        image.addEventListener("click", function() {
-            if (block.style.display === "none") {
-                block.style.display = "block";
-            } else {
-                block.style.display = "none";
-            }
-        });
+                const url = $(this).attr('href');
+                const monId = <?=$id?>;
 
-        var image_text = document.getElementById("image_text");
-        var block_text = document.getElementById("update_form_text");
-        image_text.addEventListener("click", function() {
-            if (block_text.style.display === "none") {
-                block_text.style.display = "block";
-            } else {
-                block_text.style.display = "none";
-            }
-        });
-
-        $("#image_tech").click(function() {
-            $("#dropdown").toggle();
-        });
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function(response) {
+                        spinner.hide();
+                        updatePageData(monId);
+                        showSuccessNotification('Вид работ успешно удален');
+                    },
+                    error: function(xhr, status, error) {
+                        spinner.hide();
+                        showSuccessNotification('Ошибка при удалении вида работ');
+                    }
+                });
+            });
+        }
     });
 </script>
 

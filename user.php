@@ -195,76 +195,46 @@ if (!$finance) {
                         ?>
 
                         <?php if ($usr['admin'] == "1" || $usr['name'] == "RutBat") : ?>
-                            <div class="table-responsive">
-                                <table class="table user-table text-center" style="font-size: 0.85rem; white-space: nowrap;">
-                                    <thead>
-                                        <tr>
-                                            <th>Техник</th>
-                                            <th>Работы</th>
-                                            <th>Монтажи</th>
-                                            <?php if ($showSalaryColumn) : ?>
-                                                <th>Зарплата</th>
-                                            <?php endif; ?>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $stmt = $connect->prepare("SELECT * FROM `user` WHERE `region` = ? ORDER BY `id` DESC");
-                                        $stmt->bind_param('s', $usr['region']);
-                                        $stmt->execute();
-                                        $result = $stmt->get_result();
-                                        while ($tech = $result->fetch_assoc()):
-                                            if ($tech['rang'] === 'Мастер участка') continue;
-                                        ?>
-                                        <tr>
-                                            <td class="adaptive-text">
-                                                <a style="color: black;" href="index.php?current_user=<?= $tech['fio'] ?>"><?= $tech['fio'] ?></a>
-                                            </td>
-                                            <td class="adaptive-text"><?php num_montaj("$tech[fio]", "$month", $display_year); ?></td>
-                                            <td class="adaptive-text"><?php summa_montaj("$tech[fio]", "$month", $display_year); ?> р.</td>
-                                            <?php if ($showSalaryColumn) : ?>
-                                                <td class="adaptive-text"><?php prim_zp("$tech[fio]", "$month", $display_year); ?></td>
-                                            <?php endif; ?>
-                                        </tr>
-                                        <?php endwhile; ?>
-                                    </tbody>
-                                </table>
-                            </div>
                         <?php else: ?>
-                            <table class="table mb-0" style="font-size: 0.85rem; white-space: nowrap;">
+                        <?php endif; ?>
+                        <div class="table-responsive">
+                            <table class="table user-table text-center" style="font-size: 0.85rem; white-space: nowrap;">
                                 <thead>
                                     <tr>
                                         <th>Техник</th>
+                                        <th>Работы</th>
                                         <th>Монтажи</th>
-                                        <th>Сумма денег</th>
-                                        <?php if ($showSalaryColumn): ?>
+                                        <?php if ($showSalaryColumn) : ?>
                                             <th>Зарплата</th>
                                         <?php endif; ?>
                                     </tr>
                                 </thead>
-                                <tbody class="td_user">
+                                <tbody>
+                                    <?php
+                                    $stmt = $connect->prepare("SELECT * FROM `user` WHERE `region` = ? ORDER BY `id` DESC");
+                                    $stmt->bind_param('s', $usr['region']);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    while ($tech = $result->fetch_assoc()):
+                                        if ($tech['rang'] === 'Мастер участка') continue;
+                                    ?>
                                     <tr>
-                                        <td class="adaptive-text"><?= $usr['fio']; ?></td>
-                                        <td class="adaptive-text" style="color:red;"><?php num_montaj($usr['fio'], $month, $display_year); ?></td>
-                                        <td class="adaptive-text"><?php summa_montaj($usr['fio'], $month, $display_year); ?> р.</td>
-                                        <?php if ($showSalaryColumn): ?>
-                                            <td class="adaptive-text">
-                                                <div class="p-1 border rounded bg-light text-dark text-center" style="min-width:100px;font-size:11px;">
-                                                    <p class="fw-bold mb-1">💰 Зарплата</p>
-                                                    <p class="fw-semibold text-success mb-1" style="font-size:12px;"><?php prim_zp($usr['fio'], $month, $display_year); ?></p>
-                                                </div>
-                                            </td>
+                                        <td class="adaptive-text">
+                                            <a style="color: black;" href="index.php?current_user=<?= $tech['fio'] ?>"><?= $tech['fio'] ?></a>
+                                        </td>
+                                        <td class="adaptive-text"><?php num_montaj("$tech[fio]", "$month", $display_year); ?></td>
+                                        <td class="adaptive-text"><?php summa_montaj("$tech[fio]", "$month", $display_year); ?> р.</td>
+                                        <?php if ($showSalaryColumn) : ?>
+                                            <td class="adaptive-text"><?php prim_zp("$tech[fio]", "$month", $display_year); ?></td>
                                         <?php endif; ?>
                                     </tr>
+                                    <?php endwhile; ?>
                                 </tbody>
                             </table>
-                        <?php endif; ?>
+                        </div>
 
                         <!-- Кнопки в одном контейнере -->
                         <div class="action-buttons">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#dutyModal" data-user-id="<?= $usr['id'] ?>" data-month="<?= $link_date ?>" class="duty-edit-link">
-                                <i class="fa-solid fa-calendar-check me-2"></i> Редактировать дежурства (<?php echo getDejurstvaCount($usr['id'], $link_date); ?>)
-                            </a>
                             <?php 
                             $panelTitle = '';
                             if ($isOwner) {
@@ -313,7 +283,7 @@ if (!$finance) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Выбор дежурств</h5>
+                    <h5 class="modal-title">Выбор дежурств для <span id="dutyUserFio"></span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -462,9 +432,6 @@ if (!$finance) {
     .action-buttons a:hover {
         filter: brightness(1.1);
     }
-    .duty-edit-link {
-        background: linear-gradient(45deg, #28a745, #17a2b8);
-    }
     .control-panel {
         background: linear-gradient(45deg, #ff416c, #ff4b2b);
     }
@@ -480,6 +447,21 @@ if (!$finance) {
     .holiday-selected {
         background: linear-gradient(45deg, #28a745, #ffc107) !important;
         color: white;
+    }
+    .salary-block {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .salary-block:hover {
+        transform: scale(1.02);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .salary-block.no-edit {
+        cursor: default;
+    }
+    .salary-block.no-edit:hover {
+        transform: none;
+        box-shadow: none;
     }
 </style>
 
@@ -541,6 +523,8 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             currentUserId = this.getAttribute('data-user-id');
             dutyMonth = this.getAttribute('data-month');
+            const userFio = this.closest('tr').querySelector('td:first-child a').textContent;
+            document.getElementById('dutyUserFio').textContent = userFio;
             loadDutiesAndHolidays(currentUserId, dutyMonth);
         });
     });
@@ -569,14 +553,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function generateCalendar(month) {
-        const [year, monthNum] = month.split('-');
-        const date = new Date(year, monthNum - 1, 1);
+        let year, monthNum;
+        if (month.includes('-')) {
+            [year, monthNum] = month.split('-');
+        } else {
+            // Если месяц передан в формате "MM", используем текущий год
+            year = new Date().getFullYear();
+            monthNum = month;
+        }
+        
+        const date = new Date(year, parseInt(monthNum) - 1, 1);
         const calendar = document.getElementById('dutyCalendar');
         calendar.innerHTML = '';
 
         const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
         const header = document.createElement('h5');
-        header.textContent = `${monthNames[date.getMonth()]} ${year}`;
+        header.textContent = `${monthNames[parseInt(monthNum) - 1]} ${year}`;
         calendar.appendChild(header);
 
         const table = document.createElement('table');
@@ -598,11 +590,12 @@ document.addEventListener('DOMContentLoaded', function() {
             trWeek.appendChild(document.createElement('td'));
         }
 
-        while (date.getMonth() == monthNum - 1) {
+        const lastDay = new Date(year, monthNum, 0).getDate();
+        for (let day = 1; day <= lastDay; day++) {
             const td = document.createElement('td');
-            td.textContent = date.getDate();
-            const dateStr = `${year}-${String(monthNum).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-            const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+            td.textContent = day;
+            const dateStr = `${year}-${String(monthNum).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const isWeekend = (day + firstDay - 1) % 7 >= 5;
             const isHoliday = holidays.has(dateStr);
 
             if (selectedDates.has(dateStr)) {
@@ -623,11 +616,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             trWeek.appendChild(td);
-            if (date.getDay() === 0) {
+            if ((day + firstDay - 1) % 7 === 0) {
                 tbody.appendChild(trWeek);
                 trWeek = document.createElement('tr');
             }
-            date.setDate(date.getDate() + 1);
         }
         if (trWeek.children.length > 0) {
             tbody.appendChild(trWeek);
@@ -696,6 +688,36 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 alert('Ошибка при сохранении: ' + data.error);
             }
+        });
+    });
+
+    // Обработчик клика по блоку зарплаты
+    document.querySelectorAll('.salary-block').forEach(block => {
+        const userId = block.getAttribute('data-user-id');
+        const isAdmin = <?php echo ($isAdmin || $isOwner || $isSuperAdmin) ? 'true' : 'false'; ?>;
+        const currentUserId = <?php echo $usr['id']; ?>;
+        
+        // Если пользователь не админ и это не его блок зарплаты
+        if (!isAdmin && userId != currentUserId) {
+            block.classList.add('no-edit');
+            return;
+        }
+        
+        block.addEventListener('click', function() {
+            const month = this.getAttribute('data-month');
+            const year = this.getAttribute('data-year');
+            const userFio = this.closest('tr').querySelector('td:first-child a').textContent;
+            
+            // Формируем дату в формате YYYY-MM
+            const formattedMonth = `${year}-${month}`;
+            
+            // Открываем модальное окно дежурств
+            const dutyModal = new bootstrap.Modal(document.getElementById('dutyModal'));
+            document.getElementById('dutyUserFio').textContent = userFio;
+            dutyModal.show();
+            
+            // Загружаем данные дежурств
+            loadDutiesAndHolidays(userId, formattedMonth);
         });
     });
 });
